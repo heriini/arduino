@@ -1,10 +1,18 @@
 #include <Arduino.h>
 #include <WiFi.h>
+#include <PubSubClient.h>
 
 const char* ssid = "hmmm";
 const char* pswd = "selalusalah";
 
+const char* mqtt_server = "192.168.1.129";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
 const int ledPin = 2;
+
+#define topic_led = "led/1"
 
 // put function declarations here:
 void setupWiFi();
